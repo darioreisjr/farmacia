@@ -32,15 +32,10 @@ public class Produto {
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria; 
 	
-	//@NotBlank 
-	//@Pattern(regexp = "\\A(?=\\S*?[0-9])(?=\\S*?[a-z])(?=\\S*?[A-Z])\\S{7,}\\z", message = "1 caracter maiusculo \n 1 caracter especial")
 	private String codigo;
 	
 	
 	
-	
-	
-
 	public long getId() {
 		return id;
 	}
@@ -81,9 +76,5 @@ public class Produto {
 		this.categoria = categoria;
 	}
 
-	
-
-	
-	
-	
+			
 }

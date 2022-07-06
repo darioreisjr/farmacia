@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Categoria {
 
 	@Id
-	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
@@ -31,20 +30,7 @@ public class Categoria {
 	@JsonIgnoreProperties("categoria")
 	private List<Produto> produto;
 	
-	/*@NotBlank
-	private String Medicamentos_manipulados;
-	@NotBlank
-	private String Produtos_de_receituario_medico;
-	@NotBlank
-	private String Produto_OTC;
-	@NotBlank
-	private String Medicamento_genericos;
-	@NotBlank
-	private String Medicamentos_homeopaticos;
-	@NotBlank
-	private String Produtos_de_higiene_limpeza;*/
-	
-	
+		
 	
 	public long getId() {
 		return id;
@@ -60,5 +46,4 @@ public class Categoria {
 	}
 	
 	
-
 }
