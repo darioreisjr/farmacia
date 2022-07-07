@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 //import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -21,51 +21,32 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotBlank
-	@Size(min = 5, max = 100)
-	private String nome;
-	
-	//@NotBlank	
-	private double valor;
-	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria; 
 	
-	private String codigo;
+	@NotNull
+	@Size(min = 5, max = 50)
+	private String produto;
 	
+	@NotNull
+	private double preco;
 	
+	@NotNull
+	private int quantidade;
 	
+	@NotNull
+	@Size(min = 5, max = 500)
+	private String descricao;
+	
+	private String foto;
+
 	public long getId() {
 		return id;
 	}
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public double getValor() {
-		return valor;
-	}
-
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
-
-	public String getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
 	}
 
 	public Categoria getCategoria() {
@@ -76,5 +57,47 @@ public class Produto {
 		this.categoria = categoria;
 	}
 
+	public String getProduto() {
+		return produto;
+	}
+
+	public void setProduto(String produto) {
+		this.produto = produto;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	
+	
+	
 			
 }
